@@ -54,7 +54,7 @@ export default class Home extends Component {
             backgroundColor: '#F7EA03'
         },
        
-        tabBarIcon:  <Icon name='store' size={30} color='#FFB900'/>,
+        tabBarIcon:  <Icon name='store' size={30} color='#FFB900' style={{ margin: 0 }}/>,
         headerLeft:  <TouchableOpacity
                 onPress={()=>{navigation.navigate('DrawerOpen')}}
                     >

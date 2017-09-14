@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { TouchableOpacity,
-    ScrollView
+    ScrollView,Platform
 } from 'react-native';
 import {
     StackNavigator,TabNavigator,DrawerNavigator
@@ -102,15 +102,25 @@ const MenuStack = StackNavigator({
      }
  },
  {
+    ...Platform.select({
+        ios: {
+            tabBarPosition: 'bottom'
+        },
+        android: {
+            tabBarPosition: 'bottom'
+        },
+      }),
+   
     tabBarOptions: {
       activeTintColor: '#e91e63',
       showLabel:false,
-      activeBackgroundColor : '#616180',// active color
+      showIcon: true,
+      activeBackgroundColor : (Platform.OS === 'ios') ? '#616180' : '#616180',// active color
       style: {
-       
+        backgroundColor: '#FFFFFF'
       },
       tabStyle: {
-
+        //backgroundColor: '#FFFFFF'
       }
 
     },
